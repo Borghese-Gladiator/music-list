@@ -61,8 +61,15 @@ function App() {
       ]
     },
   ]);
+
+  // apply functions on song list title (operation on title of one object in array of objects)
+  const setStoredHeading = (songListIdx, text) => {
+    const newArr = [...listSongLists]; // copy array
+    newArr[songListIdx].title = text
+    setListSongLists(newArr);
+  }
   
-  // apply functions on individual song lists
+  // apply functions on individual song lists (operation on the array of objects, songList, inside an array of objects, listSongLists)
   const addSongListItem = (songListIdx, text) => {
     const newArr = [...listSongLists]; // copy array
     const oldSongs = newArr[songListIdx].songList; 
@@ -117,17 +124,18 @@ function App() {
         <div className="song-list-container">
           {
             listSongLists.map((val, idx) => {
-              const { songList } = val;
+              const { title, songList } = val;
               return (
                 <SongList
                   key={idx}
                   songListIdx={idx}
-                  title={"Favorite Songs"}
                   removeSongList={removeListSongList}
                   completeTodo={completeSongListItem}
                   removeTodo={removeSongListItem}
                   addTodo={addSongListItem}
                   songs={songList}
+                  storedHeading={title}
+                  setStoredHeading={setStoredHeading}
                 />
               );
             })

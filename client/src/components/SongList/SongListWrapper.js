@@ -42,10 +42,7 @@ function TodoForm({ addTodo }) {
 }
 
 export default function SongListWrapper(props) {
-  const { completeTodo, removeTodo, addTodo, songs, title, songListIdx, removeSongList } = props;
-  const [storedHeading, setStoredHeading] = useState(
-    title
-  );
+  const { storedHeading, setStoredHeading, completeTodo, removeTodo, addTodo, songs, songListIdx, removeSongList } = props;
 
   // const options = ["Mangoes", "Apples", "Oranges"];
   const options = [
@@ -74,7 +71,7 @@ export default function SongListWrapper(props) {
       <h3>
         <InlineEdit
           text={storedHeading}
-          onSetText={text => setStoredHeading(text)}
+          onSetText={text => setStoredHeading(songListIdx, text)}
         />
       </h3>
       <div className="song-list">
