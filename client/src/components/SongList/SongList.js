@@ -3,7 +3,7 @@ import React from "react";
 function Todo({ todo, index, completeTodo, removeTodo }) {
   return (
     <div
-      className="todo"
+      className="song"
       style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
     >
       {todo.text}
@@ -70,7 +70,7 @@ function SongList() {
   };
 
   return (
-    <div className="todo-list">
+    <div className="song-list">
       {songs.map((todo, index) => (
         <Todo
           key={index}
