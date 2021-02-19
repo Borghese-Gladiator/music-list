@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import SongListWrapper from './components/SongListWrapper';
+import SongList from './components/SongList';
 
 import { BsPlusCircle } from 'react-icons/bs';
 
@@ -33,9 +33,10 @@ function App() {
           {
             listSongLists.map((val, idx) => {
               return (
-                <SongListWrapper
+                <SongList
                   key={idx}
                   index={idx}
+                  title={"Favorite Songs"}
                   removeSongList={removeSongList}
                 />
               );
