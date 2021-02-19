@@ -23,13 +23,6 @@
   max-width: 300px;
   background-color: #f4c983;
   box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
-
-  transition: all ease 200ms;
-}
-
-.song-list-wrapper:hover {
-  transform: scale(1.03);
-  box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12), 0 8px 32px -8px hsla(0, 0%, 0%, 0.14), 0 -6px 32px -6px hsla(0, 0%, 0%, 0.02);
 }
 
 .song-list {
@@ -141,7 +134,7 @@
 
 .dropdown-list-container {
   position: absolute;
-  z-index: 100;
+  z-index: auto;
   width: 10.5em;
 }
 
