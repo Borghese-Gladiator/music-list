@@ -22,7 +22,11 @@
   background: #fff;
   border-radius: 3px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-  font-size: 12px;  
+  font-size: 12px;
+}
+
+.todo > span {
+  word-wrap: break-word;
 }
 
 .song-list-container {
@@ -40,7 +44,7 @@
   position: relative;
   margin: 5px; /* and that, will result in a 10px gap */
 
-  max-width: 800;
+  max-width: 300px;
   background-color: #f4c983;
   box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
@@ -65,6 +69,12 @@
 }
 
 .add-btn {
+  /* Add up to 300px - same size as SongList item*/
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 102px;
+  margin-right: 102px;
+
   text-decoration: none; 
   border: none; 
   cursor: pointer; 
