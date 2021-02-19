@@ -1,39 +1,11 @@
 #app {
-  background: #209cee;
-  height: 100vh;
+  background: #e0e6eb;
   padding: 30px;
 }
 
 #content {
   text-align: center;
-  background-color: #fff;
-  box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
   padding-bottom: 30px;
-}
-
-.todo-list {
-  background: #e8e8e8;
-  border-radius: 4px;
-  max-width: 400px;
-  padding: 5px;
-  margin: 10px;  /* and that, will result in a 10px gap */
-}
-
-.todo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 6px;
-  padding: 4px 10px;
-
-  background: #fff;
-  border-radius: 3px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-  font-size: 12px;
-}
-
-.todo > span {
-  word-wrap: break-word;
 }
 
 .song-list-container {
@@ -51,6 +23,38 @@
   max-width: 300px;
   background-color: #f4c983;
   box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+
+  transition: all ease 200ms;
+}
+
+.song-list-wrapper:hover {
+  transform: scale(1.03);
+  box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12), 0 8px 32px -8px hsla(0, 0%, 0%, 0.14), 0 -6px 32px -6px hsla(0, 0%, 0%, 0.02);
+}
+
+.song-list {
+  background: #e8e8e8;
+  border-radius: 4px;
+  max-width: 400px;
+  padding: 5px;
+  margin: 10px;  /* and that, will result in a 10px gap */
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  padding: 4px 10px;
+
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+}
+
+.song > span {
+  word-wrap: break-word;
 }
 
 .close-btn {
@@ -61,10 +65,8 @@
 }
 
 .close-btn:active { 
-  transform: scale(0.98); 
-  /* Scaling button to 0.98 to its original size */ 
+  transform: scale(0.95); 
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
-  /* Lowering the shadow */ 
 }
 
 .close-btn-icon {
