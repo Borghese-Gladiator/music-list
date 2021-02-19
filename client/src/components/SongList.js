@@ -38,7 +38,7 @@ function TodoForm({ addTodo }) {
 }
 
 function SongList() {
-  const [todos, setTodos] = React.useState([
+  const [songs, setSongs] = React.useState([
     {
       text: "Learn about React",
       isCompleted: false
@@ -54,25 +54,25 @@ function SongList() {
   ]);
 
   const addTodo = text => {
-    const newTodos = [...todos, { text }];
-    setTodos(newTodos);
+    const newSongs = [...songs, { text }];
+    setSongs(newSongs);
   };
 
   const completeTodo = index => {
-    const newTodos = [...todos];
-    newTodos[index].isCompleted = true;
-    setTodos(newTodos);
+    const newSongs = [...songs];
+    newSongs[index].isCompleted = true;
+    setSongs(newSongs);
   };
 
   const removeTodo = index => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
+    const newSongs = [...songs];
+    newSongs.splice(index, 1);
+    setSongs(newSongs);
   };
 
   return (
     <div className="todo-list">
-      {todos.map((todo, index) => (
+      {songs.map((todo, index) => (
         <Todo
           key={index}
           index={index}
