@@ -1,73 +1,89 @@
-import React, { useState, useEffect } from "react";
-import Item from "./SongItem";
+import React from "react";
 
-const Todo = () => {
-  const [todos, setTodos] = useState([]);
-
-  const [todo, setTodo] = useState("");
-
-  useEffect(() => {
-    if (localStorage.items) {
-      setTodos(JSON.parse(localStorage.getItem("items")));
-    } else {
-      setTodos([]);
-    }
-  }, []);
-  const handleChange = (e) => {
-    setTodo(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (todo === "") {
-      return;
-    }
-    let todoObject = {
-      id: todos.length + 1,
-      task: todo,
-      completed: false,
-    };
-    localStorage.setItem("items", JSON.stringify([...todos, todoObject]));
-    setTodos([...todos, todoObject]);
-    setTodo("");
-  };
-
-  const completedTodo = (index) => {
-    const newList = todos.map((list) => {
-      if (list.id === index) {
-        list.completed = !list.completed;
-      }
-
-      return list;
-    });
-    localStorage.setItem("items", JSON.stringify(newList));
-    setTodos(newList);
-  };
-
+function Todo({ todo, index, completeTodo, removeTodo }) {
   return (
-    <div className="container">
-      <div className="body">
-        {todos.length > 0 ? (
-          <div className="todo-box">
-            <h3>Todo list</h3>
-            {todos.map((todoItem) => {
-              return (
-                <Item
-                  todoItem={todoItem}
-                  completedTodo={completedTodo}
-                  setTodos={setTodos}
-                  todos={todos}
-                  key={todoItem.id}
-                />
-              );
-            })}
-          </div>
-        ) : (
-          <div>You have no todos</div>
-        )}
+    <div
+      className="todo"
+      style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+    >
+      {todo.text}
+      <div>
+        <button onClick={() => completeTodo(index)}>Complete</button>
+        <button onClick={() => removeTodo(index)}>x</button>
       </div>
     </div>
   );
-};
+}
 
-export default Todo;
+function TodoForm({ addTodo }) {
+  const [value, setValue] = React.useState("");
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (!value) return;
+    addTodo(value);
+    setValue("");
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        className="input"
+        value={value}
+        onChange={e => setValue(e.target.value)}
+      />
+    </form>
+  );
+}
+
+function SongList() {
+  const [todos, setTodos] = React.useState([
+    {
+      text: "Learn about React",
+      isCompleted: false
+    },
+    {
+      text: "Meet friend for lunch",
+      isCompleted: false
+    },
+    {
+      text: "Build really cool todo app",
+      isCompleted: false
+    }
+  ]);
+
+  const addTodo = text => {
+    const newTodos = [...todos, { text }];
+    setTodos(newTodos);
+  };
+
+  const completeTodo = index => {
+    const newTodos = [...todos];
+    newTodos[index].isCompleted = true;
+    setTodos(newTodos);
+  };
+
+  const removeTodo = index => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
+
+  return (
+    <div className="todo-list">
+      {todos.map((todo, index) => (
+        <Todo
+          key={index}
+          index={index}
+          todo={todo}
+          completeTodo={completeTodo}
+          removeTodo={removeTodo}
+        />
+      ))}
+      <TodoForm addTodo={addTodo} />
+    </div>
+  );
+}
+
+export default SongList;
