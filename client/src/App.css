@@ -13,28 +13,36 @@
 }
 
 .todo {
-  align-items: center;
-  background: #fff;
-  border-radius: 3px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
   display: flex;
-  font-size: 12px;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 6px;
   padding: 3px 10px;
+
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  font-size: 12px;  
 }
 
 .song-list-container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  background-color: #fff;
+  box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
 
 .song-list-wrapper {
   position: relative;
+  margin: 5px; /* and that, will result in a 10px gap */
+
   max-width: 800;
-  margin: auto; 
+  background-color: #f4c983;
+  box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
 
 .close-btn {
@@ -59,15 +67,16 @@
 .add-btn {
   text-decoration: none; 
   border: none; 
-  padding: 12px 40px; 
-  font-size: 16px; 
-  background-color: green; 
-  color: #fff; 
-  border-radius: 5px; 
-  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24); 
   cursor: pointer; 
   outline: none; 
   transition: 0.2s all; 
+  
+  padding: 12px 40px; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  background-color: green; 
+  color: #fff; 
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24); 
 } 
 
 /* Adding transformation when the button is active */ 
@@ -77,103 +86,3 @@
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
   /* Lowering the shadow */ 
 } 
-/*
-.container {
-  border: 1px solid rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  width: 40%;
-  border-radius: 4px;
-  min-height: 100px;
-  margin: 7% auto;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: saturate(180%) blur(10px);
-}
-
-.body {
-  width: 80%;
-  padding: 15px 8px;
-  text-align: center;
-}
-form {
-  padding: 5px;
-  text-align: center;
-}
-.todo-form {
-  text-align: center;
-}
-label {
-  padding: 5px;
-  letter-spacing: 1px;
-}
-input {
-  border-radius: 4px;
-  border: 1px solid grey;
-}
-
-.todo {
-  padding: 5px 10px;
-  border: 1px solid #000;
-}
-
-.todo span {
-  padding: 5px;
-}
-.todo button {
-  float: right;
-  margin-right: 15px;
-  color: #000;
-  background-color: transparent;
-  padding: 3px 7;
-  border: none;
-  border: 1px solid black;
-  border-radius: 2px;
-  margin-top: 4px;
-}
-form button {
-  color: #000;
-  background-color: transparent;
-  padding: 3px 7;
-  border: none;
-  border: 1px solid black;
-  border-radius: 2px;
-  margin-top: 4px;
-}
-
-.form-edit input {
-  padding: 10px 5px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-}
-
-
-#nav {
-	width: 100%;
-	float: left;
-	margin: 0 0 3em 0;
-	padding: 0;
-	list-style: none;
-}
-#nav li {
-	float: left;
-}
-#nav li a {
-  display: block;
-  padding: 8px 15px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #069;
-  border-right: 1px solid #ccc;
-}
-#nav li a {
-  display: block;
-  padding: 8px 15px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #069;
-  border-right: 1px solid #ccc;
-}
-*/
