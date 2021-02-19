@@ -1,8 +1,13 @@
-## Editable Title
-Created editable title with tutorial from here: [https://dev.to/joelmturner/build-an-inline-edit-text-input-with-react-hooks-4nah](https://dev.to/joelmturner/build-an-inline-edit-text-input-with-react-hooks-4nah)
+### Editable Title
+Created InlineEdit with code from tutorial from here: [https://dev.to/joelmturner/build-an-inline-edit-text-input-with-react-hooks-4nah](https://dev.to/joelmturner/build-an-inline-edit-text-input-with-react-hooks-4nah)
 
-## Icons Info
+### Custom Dropdown Menu
+Implemented functionality myself, but started from code in tutorial here: [https://medium.com/the-andela-way/custom-select-dropdown-in-react-1758c1f6f537](https://medium.com/the-andela-way/custom-select-dropdown-in-react-1758c1f6f537)
+
+### Icons Info
 see icons here: [https://react-icons.github.io/react-icons](https://react-icons.github.io/react-icons)
+
+
 
 # Getting Started with Create React App
 
