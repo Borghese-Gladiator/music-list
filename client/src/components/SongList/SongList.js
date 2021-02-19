@@ -7,8 +7,7 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
       style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
     >
       {todo.text}
-      <div>
-        <button onClick={() => completeTodo(index)}>Complete</button>
+      <div style={{margin: '5px'}}>
         <button onClick={() => removeTodo(index)}>x</button>
       </div>
     </div>
@@ -48,7 +47,7 @@ function SongList() {
       isCompleted: false
     },
     {
-      text: "Build really cool todo app",
+      text: "Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app",
       isCompleted: false
     }
   ]);
