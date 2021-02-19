@@ -25,22 +25,25 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <div id="app">
       <Navbar />
-      <div className="song-list-container">
-        {
-          listSongLists.map((val, idx) => {
-            return (
-              <SongListWrapper
-                key={idx}
-                index={idx}
-                removeSongList={removeSongList}
-              />
-            );
-          })
-        }
-        <div className="add-btn" onClick={addSongList}>
-          <BsPlusCircle />
+      <div id="content">
+        <h1>Song Lists</h1>
+        <div className="song-list-container">
+          {
+            listSongLists.map((val, idx) => {
+              return (
+                <SongListWrapper
+                  key={idx}
+                  index={idx}
+                  removeSongList={removeSongList}
+                />
+              );
+            })
+          }
+          <div className="add-btn" onClick={addSongList}>
+            <BsPlusCircle />
+          </div>
         </div>
       </div>
       <Footer />
