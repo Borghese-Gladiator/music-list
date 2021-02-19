@@ -68,11 +68,12 @@
 }
 
 .add-btn {
-  /* Add up to 300px - same size as SongList item*/
+  /* 96 + 2*107 = Add up to 310px - same size as song-list: max-width (300px) + 5px padding*/
+  
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 102px;
-  margin-right: 102px;
+  margin-left: 107px;
+  margin-right: 107px;
 
   text-decoration: none; 
   border: none; 
