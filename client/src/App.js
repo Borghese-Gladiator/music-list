@@ -68,11 +68,11 @@ function App() {
     newArr[songListIdx].title = text
     setListSongLists(newArr);
   }
-  
+
   // apply functions on individual song lists (operation on the array of objects, songList, inside an array of objects, listSongLists)
   const addSongListItem = (songListIdx, text) => {
     const newArr = [...listSongLists]; // copy array
-    const oldSongs = newArr[songListIdx].songList; 
+    const oldSongs = newArr[songListIdx].songList;
     const newSongs = [...oldSongs, { text }]; // operation on SongListItem
     newArr[songListIdx] = {
       title: newArr[songListIdx].title,
@@ -95,7 +95,7 @@ function App() {
 
   const removeSongListItem = (songListIdx, songItemIdx) => {
     const newArr = [...listSongLists]; // copy array
-    const oldSongs = newArr[songListIdx].songList; 
+    const oldSongs = newArr[songListIdx].songList;
     const newSongs = [...oldSongs];
     newSongs.splice(songItemIdx, 1); // operation on SongListItem
     newArr[songListIdx] = {
@@ -104,7 +104,7 @@ function App() {
     };
     setListSongLists(newArr);
   };
-  
+
   // apply functions on list of song lists
   const removeListSongList = index => {
     const newTodos = [...listSongLists];
@@ -113,7 +113,24 @@ function App() {
   };
 
   const addSongList = () => {
-    setListSongLists(oldArray => [...oldArray, {}]);
+    setListSongLists(oldArray => [...oldArray,
+    {
+      title: 'Favorite Songs',
+      songList: [
+        {
+          text: "Learn about React",
+          isCompleted: false
+        },
+        {
+          text: "Meet friend for lunch",
+          isCompleted: false
+        },
+        {
+          text: "Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app",
+          isCompleted: false
+        }
+      ]
+    }]);
   }
 
   return (
