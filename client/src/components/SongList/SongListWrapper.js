@@ -12,7 +12,6 @@ function Todo({ songListIdx, todo, index, completeTodo, removeTodo }) {
     >
       {todo.text}
       <div style={{margin: '5px'}}>
-        <button onClick={() => completeTodo(songListIdx, index)}>Complete</button>
         <button onClick={() => removeTodo(songListIdx, index)}>x</button>
       </div>
     </div>
