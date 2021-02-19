@@ -1,12 +1,48 @@
 import React, { useState } from 'react';
 // custom components
-import SongList from './SongList';
 import InlineEdit from './InlineEdit';
 import DropdownMenu from './DropdownMenu';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
+function Todo({ songListIdx, todo, index, completeTodo, removeTodo }) {
+  return (
+    <div
+      className="song"
+      style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+    >
+      {todo.text}
+      <div style={{margin: '5px'}}>
+        <button onClick={() => completeTodo(songListIdx, index)}>Complete</button>
+        <button onClick={() => removeTodo(songListIdx, index)}>x</button>
+      </div>
+    </div>
+  );
+}
+
+function TodoForm({ addTodo }) {
+  const [value, setValue] = React.useState("");
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (!value) return;
+    addTodo(value);
+    setValue("");
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        className="input"
+        value={value}
+        onChange={e => setValue(e.target.value)}
+      />
+    </form>
+  );
+}
+
 export default function SongListWrapper(props) {
-  const { title, index, removeSongList } = props;
+  const { completeTodo, removeTodo, addTodo, songs, title, songListIdx, removeSongList } = props;
   const [storedHeading, setStoredHeading] = useState(
     title
   );
@@ -17,8 +53,14 @@ export default function SongListWrapper(props) {
       text: "Delete",
       execFunc: () => {
         return (
-          removeSongList(index)
+          removeSongList(songListIdx)
         )
+      }
+    },
+    {
+      text: "BLAH",
+      execFunc: () => {
+        console.log("BLAH");
       }
     }
   ]
@@ -35,7 +77,19 @@ export default function SongListWrapper(props) {
           onSetText={text => setStoredHeading(text)}
         />
       </h3>
-      <SongList />
+      <div className="song-list">
+        {songs.map((todo, index) => (
+          <Todo
+            key={index}
+            songListIdx={songListIdx}
+            index={index}
+            todo={todo}
+            completeTodo={completeTodo}
+            removeTodo={removeTodo}
+          />
+        ))}
+        <TodoForm addTodo={addTodo} />
+      </div>
     </div>
   )
 }
