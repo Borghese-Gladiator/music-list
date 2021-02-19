@@ -3,20 +3,25 @@ import React, { useState } from "react";
 import "./App.css";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import SongList from "./components/SongList";
+import SongListWrapper from './components/SongListWrapper';
 
 import { BsPlusCircle } from 'react-icons/bs';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 function App() {
-  const [songList, setSongList] = useState([
+  const [listSongLists, setListSongLists] = useState([
     {},
     {},
     {}
   ]);
+  
+  const removeSongList = index => {
+    const newTodos = [...listSongLists];
+    newTodos.splice(index, 1);
+    setListSongLists(newTodos);
+  };
 
-  const handleAdd = () => {
-    setSongList(oldArray => [...oldArray, {}]);
+  const addSongList = () => {
+    setListSongLists(oldArray => [...oldArray, {}]);
   }
 
   return (
@@ -24,18 +29,17 @@ function App() {
       <Navbar />
       <div className="song-list-container">
         {
-          songList.map((val, idx) => {
+          listSongLists.map((val, idx) => {
             return (
-              <div className="song-list-wrapper">
-                <div className="close-btn" onClick={handleAdd}>
-                  <AiOutlineCloseCircle className="close-btn-icon" />
-                </div>
-                <SongList />
-              </div>
+              <SongListWrapper
+                key={idx}
+                index={idx}
+                removeSongList={removeSongList}
+              />
             );
           })
         }
-        <div className="add-btn" onClick={handleAdd}>
+        <div className="add-btn" onClick={addSongList}>
           <BsPlusCircle />
         </div>
       </div>
