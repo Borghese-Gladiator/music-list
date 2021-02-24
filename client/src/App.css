@@ -1,5 +1,5 @@
 #app {
-  background: #e0e6eb;
+  background: #eeeeee;
   padding: 30px;
 }
 
@@ -21,7 +21,7 @@
   margin: 5px; /* and that, will result in a 10px gap */
 
   max-width: 300px;
-  background-color: #f4c983;
+  background-color: #00adb5;
   box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
 
