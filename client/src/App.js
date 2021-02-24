@@ -23,7 +23,7 @@ if (localStorage.getItem("listSongLists") === null) {
           isCompleted: false
         },
         {
-          text: "Gawr Gura Sings Compilation",
+          text: "Gawr Gura - Ride on Time",
           isCompleted: false
         },
         {
