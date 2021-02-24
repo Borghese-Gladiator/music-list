@@ -164,7 +164,6 @@ function App() {
           <UploadButton />
           <DownloadButton />
         </div>
-        <h1>Song Lists</h1>
         <div className="song-list-container">
           {
             listSongLists.map((val, idx) => {
