@@ -1,3 +1,18 @@
+# Music-List
+Track your music lists inside your browser (& import/export your music lists with text files).
+
+Use this utility with Discord bots which can play songs given the song title. I would recommend the Groovy bot.
+
+## Features
+- Custom categorize music into lists to reference when listening to music with friends
+- Download music list as a text file
+- Upload music list as a text file
+
+## Component Tutorials
+
+### Editable Todo
+Figured out creating editable components with this tutorial: [https://medium.com/@lape151093/creating-an-editable-component-in-a-react-application-todo-app-3f53231fa32b](https://medium.com/@lape151093/creating-an-editable-component-in-a-react-application-todo-app-3f53231fa32b)
+
 ### Editable Title
 Created InlineEdit with code from tutorial from here: [https://dev.to/joelmturner/build-an-inline-edit-text-input-with-react-hooks-4nah](https://dev.to/joelmturner/build-an-inline-edit-text-input-with-react-hooks-4nah)
 
@@ -7,9 +22,7 @@ Implemented functionality myself, but started from code in tutorial here: [https
 ### Icons Info
 see icons here: [https://react-icons.github.io/react-icons](https://react-icons.github.io/react-icons)
 
-
-
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
