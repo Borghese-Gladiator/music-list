@@ -52,12 +52,6 @@ export default function SongListWrapper(props) {
           removeSongList(songListIdx)
         )
       }
-    },
-    {
-      text: "BLAH",
-      execFunc: () => {
-        console.log("BLAH");
-      }
     }
   ]
 // onClick={() => removeSongList(index)}
