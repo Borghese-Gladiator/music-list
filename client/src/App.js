@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-
-import "./App.css";
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+// custom components
+import DefaultLayout from './components/_layouts/DefaultLayout';
 import SongList from './components/SongList';
-
+// assets
 import { BsPlusCircle } from 'react-icons/bs';
+// util function
+import newId from './utils/newid';
+// styling
+import "./App.css";
 
 function App() {
   const [listSongLists, setListSongLists] = useState([
     {
+      id: newId(),
       title: 'Favorite Songs',
       songList: [
         {
@@ -27,6 +30,7 @@ function App() {
       ]
     },
     {
+      id: newId(),
       title: 'Favorite Songs',
       songList: [
         {
@@ -44,6 +48,7 @@ function App() {
       ]
     },
     {
+      id: newId(),
       title: 'Favorite Songs',
       songList: [
         {
@@ -73,7 +78,11 @@ function App() {
   const addSongListItem = (songListIdx, text) => {
     const newArr = [...listSongLists]; // copy array
     const oldSongs = newArr[songListIdx].songList;
-    const newSongs = [...oldSongs, { text }]; // operation on SongListItem
+    const newSongs = [...oldSongs, {
+      id: newId(),
+      text: text,
+      isCompleted: false
+    }]; // operation on SongListItem
     newArr[songListIdx] = {
       title: newArr[songListIdx].title,
       songList: newSongs
@@ -135,16 +144,15 @@ function App() {
 
   return (
     <div id="app">
-      <Navbar />
-      <div id="content">
+      <DefaultLayout>
         <h1>Song Lists</h1>
         <div className="song-list-container">
           {
             listSongLists.map((val, idx) => {
-              const { title, songList } = val;
+              const { id, title, songList } = val;
               return (
                 <SongList
-                  key={idx}
+                  key={id}
                   songListIdx={idx}
                   removeSongList={removeListSongList}
                   completeTodo={completeSongListItem}
@@ -161,8 +169,7 @@ function App() {
             <BsPlusCircle />
           </div>
         </div>
-      </div>
-      <Footer />
+      </DefaultLayout>
     </div>
   );
 }
