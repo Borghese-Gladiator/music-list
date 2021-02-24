@@ -10,30 +10,68 @@ import useLocalStorage from './hooks/useLocalStorage';
 // styling
 import "./App.css";
 
-const defaultSongList = {
-//  id: newId(),
-  title: 'Favorite Songs',
-  songList: [
+// if null, save a default value to localStorage
+if (localStorage.getItem("listSongLists") === null) {
+  localStorage.setItem('listSongLists', JSON.stringify([
     {
-      text: "Tatsuro Yamashita - Ride on Time",
-      isCompleted: false
+      id: newId(),
+      title: 'Favorite Songs',
+      songList: [
+        {
+          text: "Tatsuro Yamashita - Ride on Time",
+          isCompleted: false
+        },
+        {
+          text: "Gawr Gura Sings Compilation",
+          isCompleted: false
+        },
+        {
+          text: "Tatsuro Yamashita - Someday/Itsuka",
+          isCompleted: false
+        }
+      ]
     },
     {
-      text: "Gawr Gura Sings Compilation",
-      isCompleted: false
+      id: newId(),
+      title: 'Favorite Songs',
+      songList: [
+        {
+          text: "Tatsuro Yamashita - Ride on Time",
+          isCompleted: false
+        },
+        {
+          text: "Gawr Gura Sings Compilation",
+          isCompleted: false
+        },
+        {
+          text: "Tatsuro Yamashita - Someday/Itsuka",
+          isCompleted: false
+        }
+      ]
     },
     {
-      text: "Tatsuro Yamashita - Someday/Itsuka",
-      isCompleted: false
-    }
-  ]
+      id: newId(),
+      title: 'Favorite Songs',
+      songList: [
+        {
+          text: "Tatsuro Yamashita - Ride on Time",
+          isCompleted: false
+        },
+        {
+          text: "Gawr Gura Sings Compilation",
+          isCompleted: false
+        },
+        {
+          text: "Tatsuro Yamashita - Someday/Itsuka",
+          isCompleted: false
+        }
+      ]
+    },
+  ]));
 }
 
 function App() {
-  // use localStorage value if exists, ELSE array of length 3 of default value
-  if (localStorage.getItem("listSongLists") === null) {
-    localStorage.setItem('listSongLists', new Array(3).fill(defaultSongList))
-  }
+  // retrieve array from localStorage
   const [listSongLists, setListSongLists] = useLocalStorage('listSongLists');
 
   // apply functions on song list title (operation on title of one object in array of objects)
@@ -48,11 +86,11 @@ function App() {
     const newArr = [...listSongLists]; // copy array
     const oldSongs = newArr[songListIdx].songList;
     const newSongs = [...oldSongs, {
-      id: newId(),
       text: text,
       isCompleted: false
     }]; // operation on SongListItem
     newArr[songListIdx] = {
+      id: newArr[songListIdx].id,
       title: newArr[songListIdx].title,
       songList: newSongs
     };
@@ -65,6 +103,7 @@ function App() {
     const newSongs = [...oldSongs];
     newSongs[songItemIdx].isCompleted = true; // operation on SongListItem
     newArr[songListIdx] = {
+      id: newArr[songListIdx].id,
       title: newArr[songListIdx].title,
       songList: newSongs
     };
@@ -77,6 +116,7 @@ function App() {
     const newSongs = [...oldSongs];
     newSongs.splice(songItemIdx, 1); // operation on SongListItem
     newArr[songListIdx] = {
+      id: newArr[songListIdx].id,
       title: newArr[songListIdx].title,
       songList: newSongs
     };
@@ -91,7 +131,24 @@ function App() {
   };
 
   const addSongList = () => {
-    setListSongLists(oldArray => [...oldArray, defaultSongList]);
+    setListSongLists(oldArray => [...oldArray, {
+      id: newId(),
+      title: 'Favorite Songs',
+      songList: [
+        {
+          text: "Tatsuro Yamashita - Ride on Time",
+          isCompleted: false
+        },
+        {
+          text: "Gawr Gura Sings Compilation",
+          isCompleted: false
+        },
+        {
+          text: "Tatsuro Yamashita - Someday/Itsuka",
+          isCompleted: false
+        }
+      ]
+    }]);
   }
 
   return (
