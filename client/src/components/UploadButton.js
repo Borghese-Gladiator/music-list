@@ -5,7 +5,8 @@ function getFile(event) {
     // add file content to localStorage
     // input.files[0] => file object - name, size, lastModified, etc.
     readFileContent(input.files[0]).then(content => {
-      localStorage.setItem('listSongLists', content)
+      localStorage.setItem('listSongLists', content);
+      window.location.reload()
     }).catch(error => console.log(error))
   }
 }
