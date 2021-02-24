@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // custom components
 import DefaultLayout from './components/_layouts/DefaultLayout';
+import UploadButton from './components/UploadButton';
 import DownloadButton from './components/DownloadButton';
 import SongList from './components/SongList';
 // assets
@@ -159,7 +160,10 @@ function App() {
   return (
     <div id="app">
       <DefaultLayout>
-        <DownloadButton />
+        <div className="flex-button-group">
+          <UploadButton />
+          <DownloadButton />
+        </div>
         <h1>Song Lists</h1>
         <div className="song-list-container">
           {

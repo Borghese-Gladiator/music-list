@@ -8,11 +8,14 @@
   padding-bottom: 30px;
 }
 
-.import-button {
-  /* flex button right */
+.flex-button-group {
   display: flex;
-  margin-left: auto;
+  flex-direction: row;
+  justify-content: flex-end;
+}
 
+.import-button {
+  margin: 5px;
   padding: 15px;
   background-color: #393e46;
   font-size: large;
@@ -25,7 +28,26 @@
   /* Scaling button to 0.98 to its original size */ 
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
   /* Lowering the shadow */ 
-} 
+}
+
+/* hide file input element */
+input[type="file"] {
+  display: none;
+}
+
+.upload-input {
+  margin: 5px;
+  padding: 15px;
+  background-color: #393e46;
+  font-size: large;
+  color: white;
+  border: 1px solid #ccc;
+}
+
+.upload-input:active { 
+  transform: scale(0.95); 
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
+}
 
 .song-list-container {
   display: flex;
