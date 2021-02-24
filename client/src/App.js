@@ -14,15 +14,15 @@ const defaultSongList = {
   title: 'Favorite Songs',
   songList: [
     {
-      text: "https://www.youtube.com/watch?v=MCZ_V3lFXjo&ab_channel=BotanCh.%E7%8D%85%E7%99%BD%E3%81%BC%E3%81%9F%E3%82%93",
+      text: "Tatsuro Yamashita - Ride on Time",
       isCompleted: false
     },
     {
-      text: "Meet friend for lunch",
+      text: "Gawr Gura Sings Compilation",
       isCompleted: false
     },
     {
-      text: "Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app",
+      text: "Tatsuro Yamashita - Someday/Itsuka",
       isCompleted: false
     }
   ]
