@@ -18,13 +18,13 @@ function Todo({ songListIdx, todo, index, completeTodo, removeTodo }) {
   );
 }
 
-function TodoForm({ addTodo }) {
+function TodoForm({ songListIdx, addTodo }) {
   const [value, setValue] = React.useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
     if (!value) return;
-    addTodo(value);
+    addTodo(songListIdx, value);
     setValue("");
   };
 
@@ -84,7 +84,7 @@ export default function SongListWrapper(props) {
             removeTodo={removeTodo}
           />
         ))}
-        <TodoForm addTodo={addTodo} />
+        <TodoForm songListIdx={songListIdx} addTodo={addTodo} />
       </div>
     </div>
   )
