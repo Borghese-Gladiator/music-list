@@ -7,10 +7,10 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 function Todo({ songListIdx, todo, index, completeTodo, removeTodo }) {
   return (
     <div
-      className="song"
+      className="song-item"
       style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
     >
-      {todo.text}
+      <span className="song-item-link">{todo.text}</span>
       <div style={{margin: '5px'}}>
         <button onClick={() => removeTodo(songListIdx, index)}>x</button>
       </div>
