@@ -4,7 +4,7 @@ import InlineEdit from './InlineEdit';
 import DropdownMenu from './DropdownMenu';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
-function Todo({ songListIdx, todo, index, completeTodo, removeTodo }) {
+function SongItem({ songListIdx, todo, index, completeTodo, removeTodo }) {
   return (
     <div
       className="song-item"
@@ -18,7 +18,7 @@ function Todo({ songListIdx, todo, index, completeTodo, removeTodo }) {
   );
 }
 
-function TodoForm({ songListIdx, addTodo }) {
+function SongItemForm({ songListIdx, addTodo }) {
   const [value, setValue] = React.useState("");
 
   const handleSubmit = e => {
@@ -75,7 +75,7 @@ export default function SongListWrapper(props) {
       </h3>
       <div className="song-list">
         {songs.map((todo, index) => (
-          <Todo
+          <SongItem
             key={index}
             songListIdx={songListIdx}
             index={index}
@@ -84,7 +84,7 @@ export default function SongListWrapper(props) {
             removeTodo={removeTodo}
           />
         ))}
-        <TodoForm songListIdx={songListIdx} addTodo={addTodo} />
+        <SongItemForm songListIdx={songListIdx} addTodo={addTodo} />
       </div>
     </div>
   )
