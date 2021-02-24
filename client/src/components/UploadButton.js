@@ -1,3 +1,4 @@
+// Styling input type file button: https://stackoverflow.com/questions/572768/styling-an-input-type-file-button
 function getFile(event) {
   const input = event.target
   if ('files' in input && input.files.length > 0) {
