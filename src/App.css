@@ -84,11 +84,11 @@ input[type="file"] {
   background: #fff;
   border-radius: 3px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-  font-size: 12px;
 }
 
 /* wrap link on song-item container: https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/*/
 .song-item > span {
+  font-size: 15px;
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
   word-wrap: break-word;
