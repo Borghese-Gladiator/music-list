@@ -6,11 +6,12 @@ import SongList from './components/SongList';
 import { BsPlusCircle } from 'react-icons/bs';
 // util function
 import newId from './utils/newid';
+import useLocalStorage from './hooks/useLocalStorage';
 // styling
 import "./App.css";
 
 const defaultSongList = {
-  id: newId(),
+//  id: newId(),
   title: 'Favorite Songs',
   songList: [
     {
@@ -29,7 +30,11 @@ const defaultSongList = {
 }
 
 function App() {
-  const [listSongLists, setListSongLists] = useState(new Array(3).fill(defaultSongList));
+  // use localStorage value if exists, ELSE array of length 3 of default value
+  if (localStorage.getItem("listSongLists") === null) {
+    localStorage.setItem('listSongLists', new Array(3).fill(defaultSongList))
+  }
+  const [listSongLists, setListSongLists] = useLocalStorage('listSongLists');
 
   // apply functions on song list title (operation on title of one object in array of objects)
   const setStoredHeading = (songListIdx, text) => {
@@ -99,7 +104,7 @@ function App() {
               const { id, title, songList } = val;
               return (
                 <SongList
-                  key={id}
+                  key={idx}
                   songListIdx={idx}
                   removeSongList={removeListSongList}
                   completeTodo={completeSongListItem}
