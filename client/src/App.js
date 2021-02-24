@@ -9,63 +9,27 @@ import newId from './utils/newid';
 // styling
 import "./App.css";
 
+const defaultSongList = {
+  id: newId(),
+  title: 'Favorite Songs',
+  songList: [
+    {
+      text: "https://www.youtube.com/watch?v=MCZ_V3lFXjo&ab_channel=BotanCh.%E7%8D%85%E7%99%BD%E3%81%BC%E3%81%9F%E3%82%93",
+      isCompleted: false
+    },
+    {
+      text: "Meet friend for lunch",
+      isCompleted: false
+    },
+    {
+      text: "Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app",
+      isCompleted: false
+    }
+  ]
+}
+
 function App() {
-  const [listSongLists, setListSongLists] = useState([
-    {
-      id: newId(),
-      title: 'Favorite Songs',
-      songList: [
-        {
-          text: "Learn about React",
-          isCompleted: false
-        },
-        {
-          text: "Meet friend for lunch",
-          isCompleted: false
-        },
-        {
-          text: "Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app",
-          isCompleted: false
-        }
-      ]
-    },
-    {
-      id: newId(),
-      title: 'Favorite Songs',
-      songList: [
-        {
-          text: "Learn about React",
-          isCompleted: false
-        },
-        {
-          text: "Meet friend for lunch",
-          isCompleted: false
-        },
-        {
-          text: "Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app",
-          isCompleted: false
-        }
-      ]
-    },
-    {
-      id: newId(),
-      title: 'Favorite Songs',
-      songList: [
-        {
-          text: "Learn about React",
-          isCompleted: false
-        },
-        {
-          text: "Meet friend for lunch",
-          isCompleted: false
-        },
-        {
-          text: "Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app",
-          isCompleted: false
-        }
-      ]
-    },
-  ]);
+  const [listSongLists, setListSongLists] = useState(new Array(3).fill(defaultSongList));
 
   // apply functions on song list title (operation on title of one object in array of objects)
   const setStoredHeading = (songListIdx, text) => {
@@ -122,24 +86,7 @@ function App() {
   };
 
   const addSongList = () => {
-    setListSongLists(oldArray => [...oldArray,
-    {
-      title: 'Favorite Songs',
-      songList: [
-        {
-          text: "Learn about React",
-          isCompleted: false
-        },
-        {
-          text: "Meet friend for lunch",
-          isCompleted: false
-        },
-        {
-          text: "Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app; Build really cool todo app",
-          isCompleted: false
-        }
-      ]
-    }]);
+    setListSongLists(oldArray => [...oldArray, defaultSongList]);
   }
 
   return (
