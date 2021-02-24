@@ -25,7 +25,7 @@ export default function UploadButton() {
     <div onChange={getFile} className="flex-button-group">
       <label className="upload-input">
         <input type="file" />
-        Custom Upload
+        Upload
       </label>
     </div>
   )
