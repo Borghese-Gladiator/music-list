@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // custom components
 import DefaultLayout from './components/_layouts/DefaultLayout';
+import DownloadButton from './components/DownloadButton';
 import SongList from './components/SongList';
 // assets
 import { BsPlusCircle } from 'react-icons/bs';
@@ -15,7 +16,7 @@ if (localStorage.getItem("listSongLists") === null) {
   localStorage.setItem('listSongLists', JSON.stringify([
     {
       id: newId(),
-      title: 'Favorite Songs',
+      title: 'Japanese City Pop',
       songList: [
         {
           text: "Tatsuro Yamashita - Ride on Time",
@@ -33,36 +34,40 @@ if (localStorage.getItem("listSongLists") === null) {
     },
     {
       id: newId(),
-      title: 'Favorite Songs',
+      title: 'Pop Songs',
       songList: [
         {
-          text: "Tatsuro Yamashita - Ride on Time",
+          text: "Miley Cyrus - Party in the USA",
           isCompleted: false
         },
         {
-          text: "Gawr Gura Sings Compilation",
+          text: "Jennifer Lopez - On The Floor ft. Pitbull",
           isCompleted: false
         },
         {
-          text: "Tatsuro Yamashita - Someday/Itsuka",
+          text: "Ed Sheeran - Shape of You",
           isCompleted: false
-        }
+        },
+        {
+          text: "Uptown Funk",
+          isCompleted: false
+        },
+        {
+          text: "Maroon 5 - Sugar",
+          isCompleted: false
+        },
       ]
     },
     {
       id: newId(),
-      title: 'Favorite Songs',
+      title: 'Japanese Pop',
       songList: [
         {
-          text: "Tatsuro Yamashita - Ride on Time",
+          text: "UNISON SQUARE GARDEN \"Sugar song and Bitter step\"",
           isCompleted: false
         },
         {
-          text: "Gawr Gura Sings Compilation",
-          isCompleted: false
-        },
-        {
-          text: "Tatsuro Yamashita - Someday/Itsuka",
+          text: "YOASOBI \"Racing into the Night\" Official Music Video",
           isCompleted: false
         }
       ]
@@ -154,6 +159,7 @@ function App() {
   return (
     <div id="app">
       <DefaultLayout>
+        <DownloadButton />
         <h1>Song Lists</h1>
         <div className="song-list-container">
           {
