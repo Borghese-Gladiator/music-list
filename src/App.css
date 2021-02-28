@@ -50,14 +50,60 @@ input[type="file"] {
 }
 
 .song-list-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  column-gap: 0px;
+}
+
+/* mobile devices */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  /* Styles */
+  .song-list-container {
+    column-count: 1;
+  }
+}
+
+/* iPads, Tablets */
+@media only screen 
+and (min-device-width : 481px) 
+and (max-device-width : 768px) {
+  /* Styles */
+  .song-list-container {
+    column-count: 2;
+  }
+}
+
+/* Small screens, laptops */
+@media only screen 
+and (min-device-width : 769px) 
+and (max-device-width : 1024px) {
+  /* Styles */
+  .song-list-container {
+    column-count: 3;
+  }
+}
+
+/* Desktops, large screens */
+@media only screen 
+and (min-device-width : 1025px) 
+and (max-device-width : 1200px) {
+  /* Styles */
+  .song-list-container {
+    column-count: 4;
+  }
+}
+
+/* Extra large screens, TV */
+@media only screen 
+and (min-device-width : 1201px) {
+  /* Styles */
+  .song-list-container {
+    column-count: 5;
+  }
 }
 
 .song-list-wrapper {
+  display: inline-block;
   position: relative;
   margin: 5px; /* and that, will result in a 10px gap */
 
