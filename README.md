@@ -7,6 +7,7 @@ Use this utility with Discord bots which can play songs given the song title. I 
 - Custom categorize music into lists to reference when listening to music with friends
 - Download music list as a text file
 - Upload music list as a text file
+- Masonry CSS layout 
 
 ## Component Tutorials
 

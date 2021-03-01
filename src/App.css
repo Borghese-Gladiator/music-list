@@ -54,49 +54,35 @@ input[type="file"] {
 }
 
 /* mobile devices */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-  /* Styles */
+@media screen and (min-width: 320px) {
   .song-list-container {
     column-count: 1;
   }
 }
 
 /* iPads, Tablets */
-@media only screen 
-and (min-device-width : 481px) 
-and (max-device-width : 768px) {
-  /* Styles */
+@media screen and (min-width: 481px) {
   .song-list-container {
     column-count: 2;
   }
 }
 
 /* Small screens, laptops */
-@media only screen 
-and (min-device-width : 769px) 
-and (max-device-width : 1024px) {
-  /* Styles */
+@media only screen and (min-width: 769px) {
   .song-list-container {
     column-count: 3;
   }
 }
 
 /* Desktops, large screens */
-@media only screen 
-and (min-device-width : 1025px) 
-and (max-device-width : 1200px) {
-  /* Styles */
+@media only screen and (min-width: 1025px) {
   .song-list-container {
     column-count: 4;
   }
 }
 
 /* Extra large screens, TV */
-@media only screen 
-and (min-device-width : 1201px) {
-  /* Styles */
+@media only screen and (min-width: 1200px) {
   .song-list-container {
     column-count: 5;
   }
@@ -170,7 +156,7 @@ and (min-device-width : 1201px) {
 }
 
 .add-btn {
-  /* 96 + 2*107 px margin = 310px => same size as song-list: max-width (300px) + 5px padding*/
+  /* 96 + 2*107 px margin = 310px => same size as song-list: max-width(300px) + 5px padding*/
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 107px;
